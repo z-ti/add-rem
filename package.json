@@ -1,0 +1,99 @@
+{
+	"name": "add-rem",
+	"displayName": "add-rem",
+	"description": "A vscode plugin that append rem to css",
+	"repository": "https://github.com/z-ti/add-rem",
+	"keywords": [
+		"css",
+		"rem",
+		"append"
+	],
+	"version": "0.0.1",
+	"publisher": "flyfox",
+	"author": "flyfox",
+	"engines": {
+		"vscode": "^1.3.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "rem.jpeg",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "add-rem.addRem",
+				"title": "add rem"
+			},
+			{
+				"command": "add-rem.delRem",
+				"title": "delete rem"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "cmd+shift+p",
+				"command": "add-rem.addRem"
+			},
+			{
+				"key": "cmd+shift+d",
+				"command": "add-rem.delRem"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"submenu": "editor.first.menu"
+				}
+			],
+			"editor.first.menu": [
+				{
+					"command": "add-rem.addRem"
+				},
+				{
+					"command": "add-rem.delRem"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"when": "editorTextFocus",
+				"id": "editor.first.menu",
+				"label": "rem action"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "rem configure",
+			"properties": {
+				"rem.ratio": {
+					"type": "number",
+					"default": "1",
+					"description": "比例"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.0.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "16.x",
+		"eslint": "^8.18.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"typescript": "^4.7.4",
+		"@vscode/test-electron": "^2.1.5"
+	},
+	"dependencies": {
+		"vsce": "^2.10.1"
+	}
+}
