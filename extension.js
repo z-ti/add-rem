@@ -7,9 +7,8 @@ const { message } = require('./tool')
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	let remInfo = vscode.workspace.getConfiguration('rem')
-	vscode.workspace.getConfiguration()
-	console.log('比例：', remInfo.ratio);
+	// let remInfo = vscode.workspace.getConfiguration('rem')
+	// console.log('比例：', remInfo.ratio);
 	const remMap = {
 		add: {
 			reg: /(:?\s*[^\(\d-])(-?\d+(.\d+)?px)/g,
