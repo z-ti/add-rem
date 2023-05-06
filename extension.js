@@ -9,15 +9,15 @@ const { message } = require('./tool')
 function activate(context) {
 	let remInfo = vscode.workspace.getConfiguration('rem')
 	vscode.workspace.getConfiguration()
-	console.log('比例：', remInfo.ratio)
+	console.log('比例：', remInfo.ratio);
 	const remMap = {
 		add: {
-			reg: /(:?\s*[^\(\d-])(-?\d+px)/g,
+			reg: /(:?\s*[^\(\d-])(-?\d+(.\d+)?px)/g,
 			rep: '$1rem($2)',
 			tip: '已添加rem'
 		},
 		del: {
-			reg: /rem\((-?\d+px)\)/g,
+			reg: /rem\((-?\d+(.\d+)?px)\)/g,
 			rep: '$1',
 			tip: '已删除rem'
 		}
