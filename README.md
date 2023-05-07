@@ -11,3 +11,8 @@ A vscode plugin that append rem to css
    - 选中对应区域，使用快捷键[cmd+shift+d] 将所选区域的css去掉rem
    - 选中对应区域，右键菜单里，rem action，add rem | delete rem
 
+### 示例1
+![Demo](https://github.com/z-ti/add-rem/tree/main/images/screenshot1.gif)
+
+### 示例2
+![Demo](https://github.com/z-ti/add-rem/tree/main/images/screenshot2.gif)
